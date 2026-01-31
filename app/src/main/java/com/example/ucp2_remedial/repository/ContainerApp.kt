@@ -1,5 +1,6 @@
 package com.example.ucp2_remedial.dependencies // Sesuaikan package
 
+import android.app.Application
 import android.content.Context
 import com.example.ucp2_remedial.repository.RepositoryPerpus
 import com.example.ucp2_remedial.room.PerpusDatabase
@@ -20,5 +21,14 @@ class AppDataContainer(private val context: Context) : AppContainer {
             bookDao = database.bookDao(),
             auditDao = database.auditDao()
         )
+    }
+}
+
+class AplikasiPerpus : Application() {
+    lateinit var container: AppContainer
+
+    override fun onCreate(){
+        super.onCreate()
+        container = AppDataContainer(this)
     }
 }
