@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 
 @Entity(
-    tableName = "physical_books",
+    tableName = "tblBukuFisik",
     foreignKeys = [
         ForeignKey(
             entity = Buku::class,
