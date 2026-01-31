@@ -1,4 +1,4 @@
-package com.example.ucp2_remedial.room
+package com.example.ucp2_remedial.room.kategori
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
             entity = Kategori::class,
             parentColumns = ["id"],
             childColumns = ["parentId"],
-            onDelete = ForeignKey.RESTRICT
+            onDelete = ForeignKey.Companion.RESTRICT
         )],
     indices = [Index(value = ["parentId"])]
 )
